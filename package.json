@@ -1,0 +1,25 @@
+{
+  "name": "homebridge-snapcast",
+  "version": "1.0.0",
+  "description": "Snapcast multiroom audio control",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "snapcast"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/noelhibbard/homebridge-snapcast"
+  },
+  "engines": {
+    "homebridge": ">=0.2.5"
+  },
+  "author": "noelhibbard",
+  "license": "MIT",
+  "dependencies": {
+    "request": "^2.88.2"
+  }
+}
