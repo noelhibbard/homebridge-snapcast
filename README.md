@@ -2,6 +2,11 @@
 
 `homebridge-snapcast` is a Homebridge plugin for controlling Snapcast clients. HomeKit has an official Service.Speaker but Apple hasn't implamented this service in the Home App so the workaround is to use Service.Lightbulb and use the brightness to control the volume.
 
+### Install:
+```bash
+npm install -g homebridge-snapcast
+```
+
 ### Example plugin configuration:
 ```
 {
