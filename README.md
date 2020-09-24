@@ -8,7 +8,7 @@ npm install -g homebridge-snapcast
 ```
 
 ### Example plugin configuration:
-```
+```json
 {
     "accessory":"Snapcast",
     "name":"Bathroom",
