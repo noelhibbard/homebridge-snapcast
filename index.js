@@ -45,14 +45,16 @@ class DimmerAccessory {
             if (err) {
                 this.log(err)
             }
-            json.result.server.groups.forEach(group => {
-                if (group.name == this.config.groupname) {
-                    group.clients.forEach(client => {
-                        if (client.config.name == this.config.name) {
-                            this.id = client.id
-                            this.volume = client.config.volume.percent
-                        }
-                    })
+            var group
+            if (this.config.groupnumber) {
+                group = json.result.server.groups[this.config.groupnumber - 1]
+            } else {
+                group = json.result.server.groups.filter(group => group.name == this.config.groupname)[0]
+            }
+            group.clients.forEach(client => {
+                if (client.config.name == this.config.name) {
+                    this.id = client.id
+                    this.volume = client.config.volume.percent
                 }
             })
             callback(null, this.volume)
@@ -77,13 +79,15 @@ class DimmerAccessory {
             if (err) {
                 this.log(err)
             }
-            json.result.server.groups.forEach(group => {
-                if (group.name == this.config.groupname) {
-                    json.result.server.groups[0].clients.forEach(client => {
-                        if (client.config.name == this.config.name) {
-                            this.muted = client.config.volume.muted
-                        }
-                    })
+            var group
+            if (this.config.groupnumber) {
+                group = json.result.server.groups[this.config.groupnumber - 1]
+            } else {
+                group = json.result.server.groups.filter(group => group.name == this.config.groupname)[0]
+            }
+            group.clients.forEach(client => {
+                if (client.config.name == this.config.name) {
+                    this.muted = client.config.volume.muted
                 }
             })
             callback(null, !this.muted)

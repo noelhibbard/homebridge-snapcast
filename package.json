@@ -1,6 +1,6 @@
 {
   "name": "homebridge-snapcast",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Snapcast multiroom audio control",
   "main": "index.js",
   "scripts": {
